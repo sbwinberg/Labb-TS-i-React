@@ -1,20 +1,14 @@
 type TileProps = {
     cell: string,
     index: number, 
-    cellClicked: 
+    cellClicked: (index : number) => void,
 }
 
-const Tile = ({cell, index, cellClicked}: {index: number}) => {
-
-
+const Tile = ({cell, index, cellClicked}: TileProps) => {
   return (
-    <div 
-        className="tile"
-        onClick={() => cellClicked(index)}
-    >
+    <div className="tile" onClick={() => cellClicked(index)}>
         {cell}
     </div>
   )
-
 }
 export default Tile
