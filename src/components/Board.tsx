@@ -1,4 +1,5 @@
 import Tile from './Tile';
+import ResetButton from './ResetButton';
 import '../css/Board.css'
 import { useState } from 'react';
 
@@ -27,6 +28,7 @@ const Board = () => {
   return (
     <div className="board">
       {gameState.map((cell, index) => <Tile cell={cell} index={index} key={index} cellClicked={cellClicked}/>)}
+      <ResetButton setGameState={setGameState}></ResetButton>
     </div>
   )
 }
